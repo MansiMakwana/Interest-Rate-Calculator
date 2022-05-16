@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="login-form">
+      <h1 class="title">Interest Rate Calculator</h1>
+      <form #IRCForm="ngForm" (ngSubmit)="calculate(IRCForm)">
+        
+          <div class="input-field">
+            <label for="creditScore"></label>
+            <h4> Credit Score:  <input type="number" placeholder="0" class="form-control" name="creditScore" ngModel required></h4>
+            
+           
+          </div>
+          
+
+          Salaried?
+          <div class="input-field">
+            <input type="radio" name="food" >Yes
+            <input type="radio" name="food">No
+            </div>
+          
+          <button [disabled]="!IRCForm.valid" class="btn login">Calculate</button>
+          
+        </form>
+
+
+        <div *ngIf="flag">
+                      <h4>Interest Rate: {{info.interestRate}}</h4>
+        </div>
+
+
+
+      
+  <br>
